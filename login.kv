@@ -1,0 +1,26 @@
+#:kivy 2.1.0
+<LoginLayout>
+    orientation: 'vertical'
+    spacing: 10
+    padding:40
+
+    Label:
+        text: 'Login Page'
+        font_size: '24sp'
+
+    TextInput:
+        id: username_input
+        hint_text: 'Username'
+        multiline: False
+
+    TextInput:
+        id: password_input
+        hint_text: 'Password'
+        multiline: False
+        password: True
+
+    Button:
+        text: 'Login'
+        on_press: app.login()
+
+#make the login page looks better
