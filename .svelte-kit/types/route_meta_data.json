@@ -1,0 +1,9 @@
+{
+	"/": [],
+	"/createAccount": [],
+	"/flashcard": [
+		"src/routes/flashcard/+page.js"
+	],
+	"/login": [],
+	"/vocabulary": []
+}
