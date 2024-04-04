@@ -44,7 +44,7 @@
     }
 
     @media (min-width: 768px) {
-        .button-54 {
+        .button {
             padding: 0.25em 0.75em;
         }
     }

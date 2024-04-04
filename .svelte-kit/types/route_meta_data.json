@@ -1,8 +1,9 @@
 {
 	"/": [],
 	"/createAccount": [],
-	"/flashcard": [
-		"src/routes/flashcard/+page.js"
+	"/homepage": [],
+	"/lesson1Animals": [
+		"src/routes/lesson1Animals/+page.js"
 	],
 	"/login": [],
 	"/vocabulary": []
