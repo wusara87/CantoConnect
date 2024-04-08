@@ -29,6 +29,8 @@
     }
 </script>
 
+<a href="/homepage"><button class="button">Back To Home</button></a>
+
 {#if currentQuestionIndex < quizData.length}
     <h1>Vocabulary Mini-Game</h1>
     <p>{quizData[currentQuestionIndex].question}</p>

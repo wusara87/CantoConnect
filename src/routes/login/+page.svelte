@@ -6,12 +6,12 @@
     $: type = show_password ? 'text' : 'password'
 
     function onInput (event) {
-	    password = event.target.value
+	     password = event.target.value
     }
 
     async function handleSubmit(event) {
         event.preventDefault();
-        goto('/lesson1Animals');
+        goto('/homepage');
     }
 </script>
 

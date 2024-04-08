@@ -6,5 +6,6 @@
 		"src/routes/lesson1Animals/+page.js"
 	],
 	"/login": [],
+	"/matching": [],
 	"/vocabulary": []
 }
