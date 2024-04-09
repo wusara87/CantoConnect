@@ -7,5 +7,7 @@
 	],
 	"/login": [],
 	"/matching": [],
-	"/vocabulary": []
+	"/vocabulary": [
+		"src/routes/vocabulary/+page.server.js"
+	]
 }

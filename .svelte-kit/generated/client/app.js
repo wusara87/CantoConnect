@@ -21,7 +21,7 @@ export const dictionary = {
 		"/lesson1Animals": [5],
 		"/login": [6],
 		"/matching": [7],
-		"/vocabulary": [8]
+		"/vocabulary": [~8]
 	};
 
 export const hooks = {

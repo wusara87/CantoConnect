@@ -4,7 +4,7 @@
 <body>
     <a href="/homepage"><button class="button">Back To Home</button></a>
     <h1>Matching mini-game</h1>
-    <p>Match the Cantonese words and pictures together.</p>
+    <p>Match the Cantonese and English words together by dragging them.</p>
     <div class="container">
         <div>
             <ul class="draggableList">

@@ -1,18 +1,21 @@
 <script>
+    export let data;
+    let quizData = data.questions;
+
     let currentQuestionIndex = 0;
-    let quizData = [
-        {
-            question: 'Which word means \'apple\' in Cantonese?',
-            options: ['蘋果', '香蕉', '西瓜', '橙'],
-            correctAnswer: '蘋果'
-        },
-        {
-            question: 'Which word means \'watermelon\' in Cantonese?',
-            options: ['橙', '西瓜', '蘋果', '香蕉'],
-            correctAnswer: '西瓜'
-        },
-        // Add more questions
-    ];
+    // let quizData = [
+    //     {
+    //         question: 'Which word means \'apple\' in Cantonese?',
+    //         options: ['蘋果', '香蕉', '西瓜', '橙'],
+    //         correctAnswer: '蘋果'
+    //     },
+    //     {
+    //         question: 'Which word means \'watermelon\' in Cantonese?',
+    //         options: ['橙', '西瓜', '蘋果', '香蕉'],
+    //         correctAnswer: '西瓜'
+    //     },
+    //     // Add more questions
+    // ];
     let selectedOption = '';
     let feedbackMessage = '';
 
