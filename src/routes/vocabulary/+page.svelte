@@ -1,14 +1,6 @@
 <script>
-    // import { reformattedQuestions } from "./+page.server";
+    export let data; 
 
-    // export async function load() {
-    //     return await fetchVocabDataFromDatabase();
-    // }
-
-    // export let data;
-    // let quizData = data.questions;
-
-    // ORIGINAL CODES
     // let currentQuestionIndex = 0;
     // let quizData = [
     //     {
@@ -44,7 +36,7 @@
     <h1>Vocabulary Mini-Game</h1>
     
     <!-- ADDED CODE -->
-    <!-- {#each reformattedQuestions as question}
+    {#each data.reformattedQuestions as question}
         <h2>{question.question}</h2>
         <ul>
             {#each question.options as option}
@@ -52,7 +44,7 @@
             {/each}
         </ul>
         <p>Correct Answer: {question.correctAnswer.join(', ')}</p>
-    {/each} -->
+    {/each}
 
     <!-- ORIGINAL CODE -->
 <!-- {#if currentQuestionIndex < quizData.length}

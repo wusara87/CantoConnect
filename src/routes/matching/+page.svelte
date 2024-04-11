@@ -1,51 +1,57 @@
 <script>
-    const words = [
-      { id: 1, word: '蘋果' },
-      { id: 2, word: '橙' },
-      { id: 3, word: '香蕉' }
-    ];
+    export let data;
   
-    const pictures = [
-      { id: 'a', image: 'https://via.placeholder.com/150' },
-      { id: 'b', image: 'https://via.placeholder.com/150' },
-      { id: 'c', image: 'https://via.placeholder.com/150' }
-    ];
-  
-    let selectedPairs = [];
+    // let selectedPairs = [];
+    let clicked_word = undefined;
+    let clicked_image = undefined;
 
     function toggleSelection(id) {
-      if (selectedPairs.includes(id)) {
-        selectedPairs = selectedPairs.filter(item => item !== id);
-      } else {
-        selectedPairs.push(id);
+    //   if (selectedPairs.includes(id)) {
+    //     selectedPairs = selectedPairs.filter(item => item !== id);
+    //   } else {
+    //     selectedPairs.push(id);
+    //   }
+    }
+
+    function checkAnswer() {
+      if (!clicked_image || !clicked_word) {
+        console.log("pick one of each");  //error
+        return;
       }
+      if (clicked_image.a_word != clicked_word.d_word) {
+        console.log("Wrong");
+        return;
+      }
+      console.log("Correct");
+      console.log({clicked_image})
+      console.log({clicked_word})
     }
 
     //check if correct pairs or not
-    //if yes -> correct! and disable the checkboxes of the pair
+    //if yes -> correct! and disable the checkboxes of the pair (remove)
     //if no -> try again!
     //when all checkboxes are disabled -> good job!
     //if user select less than 2 and more than 2 checkboxes, warning appear
 
 </script>
-  
+
 <div class="container">
     <a href="/homepage"><button class="button" id="homeBtn">Back To Home</button></a>
   <h1>Matching Mini-Game</h1>
   <p>Check the matching pairs and click submit to check your answer!</p>
   <div class="word-image-block">
-    {#each words as { id, word }}
+    {#each data.words as w}
       <div class="block">
-        <input type="checkbox" id={`word${id}`} value={id} on:change={() => toggleSelection(id)}>
-        <label for={`word${id}`}>{word}</label>
-        <input type="checkbox" id={`pic${id}`} value={id} on:change={() => toggleSelection(id)}>
-        <label for={`pic${id}`}><img src={pictures[id - 1].image} alt={`Picture ${id}`} /></label>
+        <input type="radio" name="word" id={w.d_word} value={w.d_word} on:change={() => clicked_word = w}>
+        <label for={w.d_word}>{w.d_word}</label>
+        <input type="radio" name="image" id={w.d_image_url} value={w.d_image_url} on:change={() => clicked_image = w}>
+        <label for={w.d_image_url}><img src={w.d_image_url} alt={`Picture ${w.word}`} /></label>
       </div>
     {/each}
   </div>
-  <button class="button" id="submitBtn">Submit</button>
+  <button class="button" id="submitBtn" on:click={checkAnswer}>Submit</button>
 </div>
-  
+
 <style>
   .container {
     text-align: center;

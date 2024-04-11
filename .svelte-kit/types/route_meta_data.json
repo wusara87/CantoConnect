@@ -6,7 +6,9 @@
 		"src/routes/lesson1Animals/+page.js"
 	],
 	"/login": [],
-	"/matching": [],
+	"/matching": [
+		"src/routes/matching/+page.server.js"
+	],
 	"/vocabulary": [
 		"src/routes/vocabulary/+page.server.js"
 	]

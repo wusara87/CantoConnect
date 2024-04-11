@@ -20,7 +20,7 @@ export const dictionary = {
 		"/homepage": [4],
 		"/lesson1Animals": [5],
 		"/login": [6],
-		"/matching": [7],
+		"/matching": [~7],
 		"/vocabulary": [~8]
 	};
 
