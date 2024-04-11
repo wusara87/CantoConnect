@@ -1,8 +1,15 @@
 <script>
-    export let data;
-    let quizData = data.questions;
+    // import { reformattedQuestions } from "./+page.server";
 
-    let currentQuestionIndex = 0;
+    // export async function load() {
+    //     return await fetchVocabDataFromDatabase();
+    // }
+
+    // export let data;
+    // let quizData = data.questions;
+
+    // ORIGINAL CODES
+    // let currentQuestionIndex = 0;
     // let quizData = [
     //     {
     //         question: 'Which word means \'apple\' in Cantonese?',
@@ -16,25 +23,39 @@
     //     },
     //     // Add more questions
     // ];
-    let selectedOption = '';
-    let feedbackMessage = '';
+    // let selectedOption = '';
+    // let feedbackMessage = '';
 
-    function nextQuestion() {
-        if (selectedOption === quizData[currentQuestionIndex].correctAnswer) {
-            feedbackMessage = 'Correct!';
-        } else {
-            feedbackMessage = 'Incorrect. The correct answer is ' + quizData[currentQuestionIndex].correctAnswer;
-        }
+    // function nextQuestion() {
+    //     if (selectedOption === quizData[currentQuestionIndex].correctAnswer) {
+    //         feedbackMessage = 'Correct!';
+    //     } else {
+    //         feedbackMessage = 'Incorrect. The correct answer is ' + quizData[currentQuestionIndex].correctAnswer;
+    //     }
 
-        // Move to the next question
-        currentQuestionIndex++;
-        selectedOption = ''; // Reset selected option
-    }
+    //     // Move to the next question
+    //     currentQuestionIndex++;
+    //     selectedOption = ''; // Reset selected option
+    // }
 </script>
 
-<a href="/homepage"><button class="button">Back To Home</button></a>
+<main class="container">
+    <a href="/homepage"><button class="button" id="homeBtn">Back To Home</button></a>
+    <h1>Vocabulary Mini-Game</h1>
+    
+    <!-- ADDED CODE -->
+    <!-- {#each reformattedQuestions as question}
+        <h2>{question.question}</h2>
+        <ul>
+            {#each question.options as option}
+                <li>{option}</li>
+            {/each}
+        </ul>
+        <p>Correct Answer: {question.correctAnswer.join(', ')}</p>
+    {/each} -->
 
-{#if currentQuestionIndex < quizData.length}
+    <!-- ORIGINAL CODE -->
+<!-- {#if currentQuestionIndex < quizData.length}
     <h1>Vocabulary Mini-Game</h1>
     <p>{quizData[currentQuestionIndex].question}</p>
     {#each quizData[currentQuestionIndex].options as option}
@@ -46,4 +67,26 @@
 {:else}
     <h1>Quiz Completed</h1>
     <p>Congratulations, you have completed the quiz!</p>
-{/if}
+{/if} -->
+</main>
+
+<style>
+    .container {
+        text-align: center;
+        width: 500px;
+        height: 800px;
+        border: 2px solid;
+        padding: 20px;
+        box-sizing: border-box;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    #homeBtn {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+</style>

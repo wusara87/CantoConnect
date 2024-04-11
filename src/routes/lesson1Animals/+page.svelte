@@ -1,10 +1,29 @@
 <script>
 	import Image from './Image.svelte'
+
     export let data;
     let card_index = 0;
+    const totalFlashcards = data.flashcards.length;
+
+    function goToPrev() {
+        if (card_index > 0) {
+            card_index--;
+        } else {
+            card_index = totalFlashcards - 1; //loop back to the last element
+        }
+    }
+
+    function goToNext() {
+        if (card_index < totalFlashcards - 1) {
+            card_index++;
+        } else {
+            card_index = 0;
+        }
+    }
 </script>
 
 <main class="container">
+    <a href="/homepage"><button class="button" id="homeBtn">Back To Home</button></a>
     <h1>Lesson 1: Animals</h1>
     <div class="content">
         <div class="image">
@@ -23,8 +42,8 @@
     </div>
     <br/>
     <div class="buttons">
-        <button class="prev" on:click={()=>{card_index--}}>Previous</button>
-        <button class="next" on:click={()=>{card_index++}}>Next</button>
+        <button class="prev" on:click={goToPrev}>Previous</button>
+        <button class="next" on:click={goToNext}>Next</button>
     </div>
 </main>
 
@@ -93,5 +112,10 @@
         right: 10px;
         display: flex;
         justify-content: space-between;
+    }
+    #homeBtn {
+        position: absolute;
+        top: 10px;
+        left: 10px;
     }
 </style>
