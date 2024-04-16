@@ -5,34 +5,18 @@
     let clicked_word = undefined;
     let clicked_image = undefined;
 
-    function toggleSelection(id) {
-    //   if (selectedPairs.includes(id)) {
-    //     selectedPairs = selectedPairs.filter(item => item !== id);
-    //   } else {
-    //     selectedPairs.push(id);
-    //   }
-    }
-
     function checkAnswer() {
       if (!clicked_image || !clicked_word) {
-        console.log("pick one of each");  //error
+        alert("Please select one option for each word and image.");
         return;
       }
       if (clicked_image.a_word != clicked_word.d_word) {
-        console.log("Wrong");
+        alert("Incorrect match. Please try again.");
         return;
       }
-      console.log("Correct");
-      console.log({clicked_image})
-      console.log({clicked_word})
+      alert("Correct match!");
+      window.location.reload();
     }
-
-    //check if correct pairs or not
-    //if yes -> correct! and disable the checkboxes of the pair (remove)
-    //if no -> try again!
-    //when all checkboxes are disabled -> good job!
-    //if user select less than 2 and more than 2 checkboxes, warning appear
-
 </script>
 
 <div class="container">
@@ -67,21 +51,17 @@
   }
 
   .block {
-    margin-bottom: 20px; /* Add space between blocks */
+    margin-bottom: 20px; 
     display: flex;
-    align-items: center; /* Align items vertically in each block */
-    justify-content: center; /* Center items horizontally */
+    align-items: center; 
+    justify-content: center; 
   }
 
-  .block input[type="checkbox"] {
-    margin-right: 10px; /* Add space between checkbox and label */
-  }
-
-  .block input[type="checkbox"] + label img {
-    max-width: 100px; /* Set maximum width for images */
-    height: auto; /* Allow images to resize proportionally */
+  .block label img {
+    max-width: 150px;
+    height: auto; 
     border-radius: 5px;
-    margin-left: 10px; /* Add space between image and checkbox */
+    margin-left: 10px;
   }
   #homeBtn {
         position: absolute;

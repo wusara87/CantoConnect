@@ -1,65 +1,76 @@
 <script>
     export let data; 
 
-    // let currentQuestionIndex = 0;
-    // let quizData = [
-    //     {
-    //         question: 'Which word means \'apple\' in Cantonese?',
-    //         options: ['蘋果', '香蕉', '西瓜', '橙'],
-    //         correctAnswer: '蘋果'
-    //     },
-    //     {
-    //         question: 'Which word means \'watermelon\' in Cantonese?',
-    //         options: ['橙', '西瓜', '蘋果', '香蕉'],
-    //         correctAnswer: '西瓜'
-    //     },
-    //     // Add more questions
-    // ];
-    // let selectedOption = '';
-    // let feedbackMessage = '';
+    let currentQuestionIndex = 0;
+    let quizData = data.reformattedQuestions;
+    let selectedOption = '';
+    let feedbackMessage = '';
+    let showFeedback = false;
+    let correct = 0;
+    let totalQuestions = quizData.length;
+    let showQuizCompleted = false;
 
-    // function nextQuestion() {
-    //     if (selectedOption === quizData[currentQuestionIndex].correctAnswer) {
-    //         feedbackMessage = 'Correct!';
-    //     } else {
-    //         feedbackMessage = 'Incorrect. The correct answer is ' + quizData[currentQuestionIndex].correctAnswer;
-    //     }
+    function submitAnswer() {
+        if(!selectedOption) {
+            alert("Please select an option.");
+            return;
+        }
+        const correctAnswer = quizData[currentQuestionIndex].correctAnswer;
+        if (correctAnswer.includes(selectedOption)) {
+            feedbackMessage = 'Correct!';
+            correct++;
+        } else {
+            feedbackMessage = 'Incorrect. The correct answer is ' + quizData[currentQuestionIndex].correctAnswer;
+        }
+        showFeedback = true;
+    }
 
-    //     // Move to the next question
-    //     currentQuestionIndex++;
-    //     selectedOption = ''; // Reset selected option
-    // }
+    function nextQuestion() {
+        currentQuestionIndex++;
+        selectedOption = '';
+        feedbackMessage = '';
+        showFeedback = false;
+
+        if (currentQuestionIndex == quizData.length) {
+            showQuizCompleted = true;
+        }
+    }
+
+    function tryAgain() {
+        currentQuestionIndex = 0;
+        correct = 0;
+        selectedOption = '';
+        feedbackMessage = '';
+        showFeedback = false;
+        showQuizCompleted = false;
+    }
 </script>
 
 <main class="container">
     <a href="/homepage"><button class="button" id="homeBtn">Back To Home</button></a>
     <h1>Vocabulary Mini-Game</h1>
-    
-    <!-- ADDED CODE -->
-    {#each data.reformattedQuestions as question}
-        <h2>{question.question}</h2>
-        <ul>
-            {#each question.options as option}
-                <li>{option}</li>
-            {/each}
-        </ul>
-        <p>Correct Answer: {question.correctAnswer.join(', ')}</p>
-    {/each}
 
-    <!-- ORIGINAL CODE -->
-<!-- {#if currentQuestionIndex < quizData.length}
-    <h1>Vocabulary Mini-Game</h1>
-    <p>{quizData[currentQuestionIndex].question}</p>
-    {#each quizData[currentQuestionIndex].options as option}
-        <input type="radio" bind:group={selectedOption} value={option} id={option} />
-        <label for={option}>{option}</label><br>
-    {/each}
-    <button on:click={nextQuestion}>Next Question</button>
-    <p>{feedbackMessage}</p>
-{:else}
-    <h1>Quiz Completed</h1>
-    <p>Congratulations, you have completed the quiz!</p>
-{/if} -->
+    {#if currentQuestionIndex < quizData.length}
+        <p>{quizData[currentQuestionIndex].question}</p>
+        {#each quizData[currentQuestionIndex].options as option}
+            <input type="radio" bind:group={selectedOption} value={option} id={option} />
+            <label for={option}>{option}</label><br>
+        {/each}
+        {#if !showFeedback}
+            <button on:click={submitAnswer}>Submit</button>
+        {/if}
+        {#if showFeedback && currentQuestionIndex < quizData.length - 1}
+            <p>{feedbackMessage}</p>
+            <button on:click={nextQuestion}>Next Question</button>
+        {:else if showFeedback}
+            <p>{feedbackMessage}</p>
+            <button on:click={() => currentQuestionIndex = quizData.length}>Done</button>
+        {/if}
+    {:else}
+        <p>Congratulations, you have completed the quiz!</p>
+        <p>Score: {correct}/{totalQuestions}</p>
+        <button on:click={tryAgain}>Try Again</button>
+    {/if}
 </main>
 
 <style>

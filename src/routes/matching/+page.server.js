@@ -30,29 +30,16 @@ export async function load() {
     word_rows[1].d_image_url = temp_image;
     word_rows[1].a_word = temp_word;
 
-    //add more code
+    temp_image = word_rows[1].d_image_url;
+    temp_word = word_rows[1].a_word;
+
+    word_rows[1].d_image_url = word_rows[2].d_image_url;
+    word_rows[1].a_word = word_rows[2].a_word;
+
+    word_rows[2].d_image_url = temp_image;
+    word_rows[2].a_word = temp_word;
 
     console.log({word_rows});
-
-    // let reformattedQuestions = [];
-
-    // for (let word_row of word_rows) {
-    //     let question = {
-    //         question: word_row.question,
-    //         options: [],
-    //         correctAnswer: []
-    //     };
-
-    //     for (let answer_row of answer_rows) {
-    //         if (answer_row.word_id === word_row.word_id) {
-    //             question.options.push(answer_row.answer);
-    //             if (answer_row.isCorrect) {
-    //                 question.correctAnswer.push(answer_row.answer);
-    //             }
-    //         }
-    //     }
-    //     reformattedQuestions.push(question);
-    // }
 
     return { words: word_rows };
 }
