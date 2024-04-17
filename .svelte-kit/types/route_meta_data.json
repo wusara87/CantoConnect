@@ -9,6 +9,9 @@
 	"/matching": [
 		"src/routes/matching/+page.server.js"
 	],
+	"/sentence": [
+		"src/routes/sentence/+page.server.js"
+	],
 	"/vocabulary": [
 		"src/routes/vocabulary/+page.server.js"
 	]
