@@ -1,5 +1,6 @@
 <div class="container">
     <h1>Welcome to CantoConnect!</h1>
+    <img src="src/routes/logo.jpg" alt="cute logo"><br/>
     <a href="/login"><button class="button">Log In</button></a><br/>
     <a href="/createAccount"><button class="button">Create An Account</button></a>
 </div>
@@ -18,7 +19,10 @@
         left: 50%;
         transform: translate(-50%, -50%);
     }
-
+    img {
+        width: 300px;
+        height: auto;
+    }
     .button {
         margin: 20px;
         font-family: "Open Sans", sans-serif;

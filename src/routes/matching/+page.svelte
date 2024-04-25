@@ -20,7 +20,7 @@
 </script>
 
 <div class="container">
-    <a href="/homepage"><button class="button" id="homeBtn">Back To Home</button></a>
+    <a href="/homepage"><button class="button" id="homeBtn">Back To Home</button></a><br/>
   <h1>Matching Mini-Game</h1>
   <p>Check the matching pairs and click submit to check your answer!</p>
   <div class="word-image-block">
@@ -65,7 +65,36 @@
   }
   #homeBtn {
         position: absolute;
-        top: 10px;
-        left: 10px;
+        top: 0px;
+        left: 0px;
+    }
+    .button {
+        margin: 20px;
+        font-family: "Open Sans", sans-serif;
+        font-size: 16px;
+        letter-spacing: 2px;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #000;
+        cursor: pointer;
+        border: 3px solid;
+        padding: 0.25em 0.5em;
+        box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+        position: relative;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+    }
+
+    .button:active {
+        box-shadow: 0px 0px 0px 0px;
+        top: 5px;
+        left: 5px;
+    }
+
+    @media (min-width: 768px) {
+        .button {
+            padding: 0.25em 0.75em;
+        }
     }
 </style>

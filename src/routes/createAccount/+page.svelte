@@ -38,7 +38,7 @@
             </button>
         </div>
         <br/>
-        <button type="submit">Create Account</button>
+        <button class="button" type="submit">Create Account</button>
     </form>
     <p>Already have an account? <a href="/login">Login</a></p>
 </div>
@@ -63,5 +63,34 @@
     }
     input {
         margin: 4px;
+    }
+    .button {
+        margin: 0px;
+        font-family: "Open Sans", sans-serif;
+        font-size: 16px;
+        letter-spacing: 2px;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #000;
+        cursor: pointer;
+        border: 3px solid;
+        padding: 0.25em 0.5em;
+        box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+        position: relative;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+    }
+
+    .button:active {
+        box-shadow: 0px 0px 0px 0px;
+        top: 5px;
+        left: 5px;
+    }
+
+    @media (min-width: 768px) {
+        .button {
+            padding: 0.25em 0.75em;
+        }
     }
 </style>

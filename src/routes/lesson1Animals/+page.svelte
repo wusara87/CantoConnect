@@ -23,7 +23,7 @@
 </script>
 
 <main class="container">
-    <a href="/homepage"><button class="button" id="homeBtn">Back To Home</button></a>
+    <a href="/homepage"><button class="button" id="homeBtn">Back To Home</button></a><br/>
     <h1>Lesson 1: Animals</h1>
     <div class="content">
         <div class="image">
@@ -42,8 +42,8 @@
     </div>
     <br/>
     <div class="buttons">
-        <button class="prev" on:click={goToPrev}>Previous</button>
-        <button class="next" on:click={goToNext}>Next</button>
+        <button class="prev button" on:click={goToPrev}>Previous</button>
+        <button class="next button" on:click={goToNext}>Next</button>
     </div>
 </main>
 
@@ -107,15 +107,44 @@
 	}
     .buttons {
         position: absolute;
-        bottom: 10px;
-        left: 10px;
-        right: 10px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
         display: flex;
         justify-content: space-between;
     }
     #homeBtn {
         position: absolute;
-        top: 10px;
-        left: 10px;
+        top: 0px;
+        left: 0px;
+    }
+    .button {
+        margin: 20px;
+        font-family: "Open Sans", sans-serif;
+        font-size: 16px;
+        letter-spacing: 2px;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #000;
+        cursor: pointer;
+        border: 3px solid;
+        padding: 0.25em 0.5em;
+        box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+        position: relative;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+    }
+
+    .button:active {
+        box-shadow: 0px 0px 0px 0px;
+        top: 5px;
+        left: 5px;
+    }
+
+    @media (min-width: 768px) {
+        .button {
+            padding: 0.25em 0.75em;
+        }
     }
 </style>

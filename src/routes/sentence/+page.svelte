@@ -46,7 +46,7 @@
 </script>
 
 <main class="container">
-    <a href="/homepage"><button class="button" id="homeBtn">Back To Home</button></a>
+    <a href="/homepage"><button class="button" id="homeBtn">Back To Home</button></a> <br/>
     <h1>Sentence Shuffle</h1>
     {#if !showQuizComplete}
         <p>Click on the words to form a sentence:</p>
@@ -61,14 +61,14 @@
         </div>
         <div class="sentence">
             <p>Your Sentence: {userSentence}</p>
-            <button on:click={checkAnswer}>Submit</button>
-            <button on:click={clear}>Clear</button>
+            <button class="button" on:click={checkAnswer}>Submit</button>
+            <button class="button" on:click={clear}>Clear</button>
         </div>
     {/if}
     {#if showQuizComplete}
         <div>
             <p>Congratulations! You have completed the mini-game.</p>
-            <button on:click={restartGame}>Try Again</button>
+            <button class="button" on:click={restartGame}>Try Again</button>
         </div>
     {/if}
 </main>
@@ -89,8 +89,8 @@
     }
     #homeBtn {
         position: absolute;
-        top: 10px;
-        left: 10px;
+        top: 0px;
+        left: 0px;
     }
     .word-container {
         display: flex;
@@ -113,5 +113,34 @@
 
     .sentence {
         margin-top: 20px;
+    }
+    .button {
+        margin: 20px;
+        font-family: "Open Sans", sans-serif;
+        font-size: 16px;
+        letter-spacing: 2px;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #000;
+        cursor: pointer;
+        border: 3px solid;
+        padding: 0.25em 0.5em;
+        box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+        position: relative;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+    }
+
+    .button:active {
+        box-shadow: 0px 0px 0px 0px;
+        top: 5px;
+        left: 5px;
+    }
+
+    @media (min-width: 768px) {
+        .button {
+            padding: 0.25em 0.75em;
+        }
     }
 </style>
