@@ -1,6 +1,4 @@
 <script>
-    export let vocabScore = 0;
-    
     export let data; 
 
     let currentQuestionIndex = 0;
@@ -10,6 +8,7 @@
     let showFeedback = false;
     let totalQuestions = quizData.length;
     let showQuizCompleted = false;
+    let vocabScore = 0;
 
     function submitAnswer() {
         if(!selectedOption) {
@@ -50,7 +49,6 @@
 <main class="container">
     <a href="/homepage"><button class="button" id="homeBtn">Back To Home</button></a><br/>
     <h1>Vocabulary Mini-Game</h1>
-
     {#if currentQuestionIndex < quizData.length}
         <p>{quizData[currentQuestionIndex].question}</p>
         {#each quizData[currentQuestionIndex].options as option}

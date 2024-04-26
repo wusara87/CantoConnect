@@ -1,5 +1,4 @@
 <script>
-    // import { vocabScore } from '../vocabulary/+page.svelte'; 
 </script>
 
 <main class="container">
@@ -10,10 +9,6 @@
     <a href="/vocabulary"><button class="button">Vocabulary Mini-Game</button></a><br/>
     <a href="/matching"><button class="button">Matching Mini-Game</button></a>
     <a href="/sentence"><button class="button">Sentence Shuffle Mini-Game</button></a>
-    <!-- <div>
-        <h3>Daily Report</h3>
-        <p>Vocabulary Mini-Game: {vocabScore}</p>
-    </div> -->
 </main>
 
 <style>

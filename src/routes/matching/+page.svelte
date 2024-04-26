@@ -1,7 +1,6 @@
 <script>
     export let data;
   
-    // let selectedPairs = [];
     let clicked_word = undefined;
     let clicked_image = undefined;
 
