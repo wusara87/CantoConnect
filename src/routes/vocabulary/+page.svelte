@@ -1,4 +1,5 @@
 <script>
+    import {vocabScore} from '$lib/vocabScore.js';
     export let data; 
 
     let currentQuestionIndex = 0;
@@ -8,7 +9,8 @@
     let showFeedback = false;
     let totalQuestions = quizData.length;
     let showQuizCompleted = false;
-    let vocabScore = 0;
+    
+    // let vocabScore = 0;
 
     function submitAnswer() {
         if(!selectedOption) {
@@ -18,7 +20,7 @@
         const correctAnswer = quizData[currentQuestionIndex].correctAnswer;
         if (correctAnswer.includes(selectedOption)) {
             feedbackMessage = 'Correct!';
-            vocabScore++;
+            vocabScore.update((n) => n + 1);
         } else {
             feedbackMessage = 'Incorrect. The correct answer is ' + quizData[currentQuestionIndex].correctAnswer;
         }
@@ -38,7 +40,7 @@
 
     function tryAgain() {
         currentQuestionIndex = 0;
-        vocabScore = 0;
+        vocabScore.update((n) => 0);
         selectedOption = '';
         feedbackMessage = '';
         showFeedback = false;
