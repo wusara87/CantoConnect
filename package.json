@@ -21,6 +21,7 @@
 	"type": "module",
 	"dependencies": {
 		"better-sqlite3": "^9.4.5",
-		"svelte-dnd-action": "^0.9.43"
+		"svelte-dnd-action": "^0.9.43",
+		"svelte-routing": "^2.12.0"
 	}
 }

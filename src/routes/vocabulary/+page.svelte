@@ -9,8 +9,8 @@
     let showFeedback = false;
     let totalQuestions = quizData.length;
     let showQuizCompleted = false;
-    
-    // let vocabScore = 0;
+    vocabScore.set(0);
+
 
     function submitAnswer() {
         if(!selectedOption) {
@@ -40,7 +40,7 @@
 
     function tryAgain() {
         currentQuestionIndex = 0;
-        vocabScore.update((n) => 0);
+        vocabScore.set(0);
         selectedOption = '';
         feedbackMessage = '';
         showFeedback = false;
@@ -69,7 +69,7 @@
         {/if}
     {:else}
         <p>Congratulations, you have completed the quiz!</p>
-        <p>Score: {vocabScore}/{totalQuestions}</p>
+        <p>Score: {$vocabScore}/{totalQuestions}</p>
         <button class="button" on:click={tryAgain}>Try Again</button>
     {/if}
 </main>

@@ -1,4 +1,5 @@
 <script>
+    import {sentenceScore} from '$lib/sentenceScore.js';
     export let data;
 
     let words = data.reformattedSentences;
@@ -28,6 +29,7 @@
             userSentence = '';
             if (currentIndex === words.length) {
                 showQuizComplete = true;
+                sentenceScore.set('Completed');
             }
         } else {
             alert('Incorrect. Try again.');

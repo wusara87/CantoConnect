@@ -1,38 +1,61 @@
 <script>
-    export let data;
-  
-    let clicked_word = undefined;
-    let clicked_image = undefined;
+  import {matchingScore} from '$lib/matchingScore.js';
+  export let data;
 
-    function checkAnswer() {
-      if (!clicked_image || !clicked_word) {
-        alert("Please select one option for each word and image.");
-        return;
-      }
-      if (clicked_image.a_word != clicked_word.d_word) {
-        alert("Incorrect match. Please try again.");
-        return;
-      }
-      alert("Correct match!");
-      window.location.reload();
+  let clicked_word = undefined;
+  let clicked_image = undefined;
+  let count = 0;
+  let allMatched = false;
+
+  function checkAnswer() {
+    if (!clicked_image || !clicked_word) {
+      alert("Please select one option for each word and image.");
+      return;
     }
+    if (clicked_image.a_word != clicked_word.d_word) {
+      alert("Incorrect match. Please try again.");
+      return;
+    }
+    alert("Correct match!");
+    disableCorrectPair(clicked_word, clicked_image);
+    clicked_image = undefined;
+    clicked_word = undefined;
+    count++;
+    if (count === 3) {
+      allMatched = true;
+      matchingScore.set('Completed');
+    }
+  }
+
+  function disableCorrectPair(word, image) {
+    const wordRadio = document.getElementById(word.d_word);
+    const imageRadio = document.getElementById(image.d_image_url);
+    if (wordRadio) wordRadio.disabled = true;
+    if (imageRadio) imageRadio.disabled = true;
+  }
 </script>
 
 <div class="container">
     <a href="/homepage"><button class="button" id="homeBtn">Back To Home</button></a><br/>
-  <h1>Matching Mini-Game</h1>
-  <p>Check the matching pairs and click submit to check your answer!</p>
-  <div class="word-image-block">
-    {#each data.words as w}
-      <div class="block">
-        <input type="radio" name="word" id={w.d_word} value={w.d_word} on:change={() => clicked_word = w}>
-        <label for={w.d_word}>{w.d_word}</label>
-        <input type="radio" name="image" id={w.d_image_url} value={w.d_image_url} on:change={() => clicked_image = w}>
-        <label for={w.d_image_url}><img src={w.d_image_url} alt={`Picture ${w.word}`} /></label>
-      </div>
-    {/each}
-  </div>
-  <button class="button" id="submitBtn" on:click={checkAnswer}>Submit</button>
+    <h1>Matching Mini-Game</h1>
+    <p>Check the matching pairs and click submit to check your answer!</p>
+    <div class="word-image-block">
+      {#each data.words as w}
+        <div class="block">
+          <input type="radio" name="word" id={w.d_word} value={w.d_word} on:change={() => clicked_word = w} disabled={w.matched}>
+          <label for={w.d_word}>{w.d_word}</label>
+          <input type="radio" name="image" id={w.d_image_url} value={w.d_image_url} on:change={() => clicked_image = w} disabled={w.matched}>
+          <label for={w.d_image_url}><img src={w.d_image_url} alt={`Picture ${w.word}`} /></label>
+        </div>
+      {/each}
+    </div>
+    {#if !allMatched}
+      <button class="button" id="submitBtn" on:click={checkAnswer}>Submit</button>
+    {/if}
+    {#if allMatched}
+      <p>You have completed the mini-game!</p>
+      <a href="/homepage"><button class="button" id="returnBtn">Return to Hompage</button></a><br/>
+    {/if}
 </div>
 
 <style>
@@ -95,5 +118,8 @@
         .button {
             padding: 0.25em 0.75em;
         }
+    }
+    #returnBtn {
+      margin: 0px;
     }
 </style>
