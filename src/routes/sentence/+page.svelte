@@ -41,10 +41,10 @@
         userSentence = '';
     }
 
-    function restartGame() {
-        currentIndex = 0;
-        showQuizComplete = false;
-    }
+    // function restartGame() {
+    //     currentIndex = 0;
+    //     showQuizComplete = false;
+    // }
 </script>
 
 <main class="container">
@@ -70,7 +70,7 @@
     {#if showQuizComplete}
         <div>
             <p>Congratulations! You have completed the mini-game.</p>
-            <button class="button" on:click={restartGame}>Try Again</button>
+            <a href="/homepage"><button class="button" id="returnBtn">Return to Hompage</button></a><br/>
         </div>
     {/if}
 </main>
@@ -144,5 +144,8 @@
         .button {
             padding: 0.25em 0.75em;
         }
+    }
+    #returnBtn {
+      margin: 0px;
     }
 </style>

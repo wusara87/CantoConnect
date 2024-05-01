@@ -7,15 +7,15 @@
 <main class="container">
     <a href="/login"><button class="button" id="homeBtn">Logout</button></a><br/>
     <h1>CantoConnect</h1>
-    <img src="src/routes/logo.jpg" alt="cute logo">
-    <a href="/lesson1Animals"><button class="button">Lesson 1: Animals</button></a><br/>
+    <img src="src/routes/logo.jpg" alt="cute logo"><br/>
+    <a href="/lesson1Animals"><button class="button">Lesson 1: Fruits</button></a><br/>
     <a href="/vocabulary"><button class="button">Vocabulary Mini-Game</button></a><br/>
     <a href="/matching"><button class="button">Matching Mini-Game</button></a>
     <a href="/sentence"><button class="button">Sentence Shuffle Mini-Game</button></a>
     <h3>Daily Report</h3>
     <p>Vocabulary: {$vocabScore}/2</p> 
     <p>Matching: {$matchingScore}</p>
-    <p>Sentence Shuffle: {$sentenceScore}</p> <!-- need to add score -->
+    <p>Sentence Shuffle: {$sentenceScore}</p> 
 </main>
 
 <style>

@@ -38,7 +38,7 @@
 <div class="container">
     <a href="/homepage"><button class="button" id="homeBtn">Back To Home</button></a><br/>
     <h1>Matching Mini-Game</h1>
-    <p>Check the matching pairs and click submit to check your answer!</p>
+    <p>Select the matching pairs and click submit to check your answer!</p>
     <div class="word-image-block">
       {#each data.words as w}
         <div class="block">

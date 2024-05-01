@@ -24,7 +24,7 @@
 
 <main class="container">
     <a href="/homepage"><button class="button" id="homeBtn">Back To Home</button></a><br/>
-    <h1>Lesson 1: Animals</h1>
+    <h1>Lesson 1: Fruits</h1>
     <div class="content">
         <div class="image">
             <Image src="{data.flashcards[card_index].image_url}"/>
