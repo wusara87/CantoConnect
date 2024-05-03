@@ -24,6 +24,8 @@
 		"@sveltejs/adapter-netlify": "^4.2.0",
 		"@vercel/postgres": "^0.8.0",
 		"better-sqlite3": "^9.4.5",
+		"dotenv": "^16.4.5",
+		"pg": "^8.11.5",
 		"svelte-dnd-action": "^0.9.43",
 		"svelte-routing": "^2.12.0"
 	}

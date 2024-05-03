@@ -62,3 +62,72 @@ function shuffle(array) {
 
     return array;
 }
+
+// import { createPool, sql } from '@vercel/postgres';
+// import { POSTGRES_URL } from '$env/static/private';
+
+// async function seed() {
+//     const createTable = await sql`
+//         CREATE TABLE IF NOT EXISTS sentence_words (
+//             word_id INTEGER NOT NULL PRIMARY KEY,
+//             word TEXT NOT NULL,
+//             sentence_id INTEGER NOT NULL
+//         );
+//     `
+//     console.log(`created "sentence_words" table`);
+
+//     const sentence_words = await Promise.all([
+//         sql`
+//             INSERT INTO sentence_words (word_id, word, sentence_id)
+//             VALUES (0, '這', 0)
+//         `,
+//         sql`
+//             INSERT INTO sentence_words (word_id, word, sentence_id)
+//             VALUES (0, '這', 0)
+//         `,
+//         sql`
+//         INSERT INTO sentence_words (word_id, word, sentence_id)
+//         VALUES (0, '這', 0)
+//         `,
+//         sql`
+//             INSERT INTO sentence_words (word_id, word, sentence_id)
+//             VALUES (0, '這', 0)
+//         `,
+//         sql`
+//             INSERT INTO sentence_words (word_id, word, sentence_id)
+//             VALUES (0, '這', 0)
+//         `,
+//         sql`
+//             INSERT INTO sentence_words (word_id, word, sentence_id)
+//             VALUES (0, '這', 0)
+//         `,
+//         sql`
+//             INSERT INTO sentence_words (word_id, word, sentence_id)
+//             VALUES (0, '這', 0)
+//         `,
+//         sql`
+//             INSERT INTO sentence_words (word_id, word, sentence_id)
+//             VALUES (0, '這', 0)
+//         `,
+//         sql`
+//             INSERT INTO sentence_words (word_id, word, sentence_id)
+//             VALUES (0, '這', 0)
+//         `,
+//         sql`
+//             INSERT INTO sentence_words (word_id, word, sentence_id)
+//             VALUES (0, '這', 0)
+//         `,
+//         sql`
+//             INSERT INTO sentence_words (word_id, word, sentence_id)
+//             VALUES (0, '這', 0)
+//         `,
+//         sql`
+//             INSERT INTO sentence_words (word_id, word, sentence_id)
+//             VALUES (0, '這', 0)
+//         `
+//     ]) 
+//     return {
+//         createTable,
+//         sentence_words
+//     }
+// }
