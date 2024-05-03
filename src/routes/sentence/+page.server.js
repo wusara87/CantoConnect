@@ -75,6 +75,9 @@ const pool = new pg.Pool({
     database: process.env.POSTGRES_DATABASE,
     password: process.env.POSTGRES_PASSWORD,
     port: process.env.POSTGRES_PORT,
+    ssl: {
+        rejectUnauthorized: false, // Ignore self-signed SSL certificates
+    },
 });
 
 // Function to fetch data from the database
