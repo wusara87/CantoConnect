@@ -1,0 +1,192 @@
+{
+  ".svelte-kit/generated/server/internal.js": {
+    "file": "internal.js",
+    "src": ".svelte-kit/generated/server/internal.js",
+    "isEntry": true,
+    "imports": [
+      "_internal.js"
+    ]
+  },
+  "_client.js": {
+    "file": "chunks/client.js",
+    "imports": [
+      "_exports.js"
+    ]
+  },
+  "_database.js": {
+    "file": "chunks/database.js"
+  },
+  "_exports.js": {
+    "file": "chunks/exports.js"
+  },
+  "_index.js": {
+    "file": "chunks/index.js",
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "_internal.js": {
+    "file": "chunks/internal.js",
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "_ssr.js": {
+    "file": "chunks/ssr.js"
+  },
+  "_vocabScore.js": {
+    "file": "chunks/vocabScore.js",
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "node_modules/@sveltejs/kit/src/runtime/components/error.svelte": {
+    "file": "entries/fallbacks/error.svelte.js",
+    "src": "node_modules/@sveltejs/kit/src/runtime/components/error.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js",
+      "_client.js"
+    ]
+  },
+  "node_modules/@sveltejs/kit/src/runtime/components/layout.svelte": {
+    "file": "entries/fallbacks/layout.svelte.js",
+    "src": "node_modules/@sveltejs/kit/src/runtime/components/layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "node_modules/@sveltejs/kit/src/runtime/server/index.js": {
+    "file": "index.js",
+    "src": "node_modules/@sveltejs/kit/src/runtime/server/index.js",
+    "isEntry": true,
+    "imports": [
+      "_internal.js",
+      "_exports.js",
+      "_index.js"
+    ]
+  },
+  "src/routes/+page.svelte": {
+    "file": "entries/pages/_page.svelte.js",
+    "src": "src/routes/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.BchNyfj5.css"
+    ]
+  },
+  "src/routes/createAccount/+page.svelte": {
+    "file": "entries/pages/createAccount/_page.svelte.js",
+    "src": "src/routes/createAccount/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js",
+      "_client.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.7JGvB1Ix.css"
+    ]
+  },
+  "src/routes/homepage/+page.svelte": {
+    "file": "entries/pages/homepage/_page.svelte.js",
+    "src": "src/routes/homepage/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js",
+      "_vocabScore.js",
+      "_index.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.BCGzq5h_.css"
+    ]
+  },
+  "src/routes/lesson1Animals/+page.js": {
+    "file": "entries/pages/lesson1Animals/_page.js",
+    "src": "src/routes/lesson1Animals/+page.js",
+    "isEntry": true
+  },
+  "src/routes/lesson1Animals/+page.svelte": {
+    "file": "entries/pages/lesson1Animals/_page.svelte.js",
+    "src": "src/routes/lesson1Animals/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.DT4o63U4.css"
+    ]
+  },
+  "src/routes/login/+page.svelte": {
+    "file": "entries/pages/login/_page.svelte.js",
+    "src": "src/routes/login/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js",
+      "_client.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.7JGvB1Ix.css"
+    ]
+  },
+  "src/routes/matching/+page.server.js": {
+    "file": "entries/pages/matching/_page.server.js",
+    "src": "src/routes/matching/+page.server.js",
+    "isEntry": true,
+    "imports": [
+      "_database.js"
+    ]
+  },
+  "src/routes/matching/+page.svelte": {
+    "file": "entries/pages/matching/_page.svelte.js",
+    "src": "src/routes/matching/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.DOAeSuNo.css"
+    ]
+  },
+  "src/routes/sentence/+page.server.js": {
+    "file": "entries/pages/sentence/_page.server.js",
+    "src": "src/routes/sentence/+page.server.js",
+    "isEntry": true,
+    "imports": [
+      "_database.js"
+    ]
+  },
+  "src/routes/sentence/+page.svelte": {
+    "file": "entries/pages/sentence/_page.svelte.js",
+    "src": "src/routes/sentence/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.E-00ZDaJ.css"
+    ]
+  },
+  "src/routes/vocabulary/+page.server.js": {
+    "file": "entries/pages/vocabulary/_page.server.js",
+    "src": "src/routes/vocabulary/+page.server.js",
+    "isEntry": true,
+    "imports": [
+      "_database.js"
+    ]
+  },
+  "src/routes/vocabulary/+page.svelte": {
+    "file": "entries/pages/vocabulary/_page.svelte.js",
+    "src": "src/routes/vocabulary/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js",
+      "_vocabScore.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.o_SAxbWX.css"
+    ]
+  }
+}
