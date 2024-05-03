@@ -66,10 +66,10 @@
 
 
 // Import the Pool class from the pg library
-import { Pool } from 'pg';
+import pg from 'pg';
 
 // Create a new Pool instance with your Vercel PostgreSQL database credentials
-const pool = new Pool({
+const pool = new pg.Pool({
   user: process.env.PGUSER,
   host: process.env.PGHOST,
   database: process.env.PGDATABASE,
