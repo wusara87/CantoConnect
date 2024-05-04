@@ -43,13 +43,20 @@ BEGIN TRANSACTION;
 
 -- DROP TABLE vocabulary_answers;
 
-CREATE TABLE IF NOT EXISTS "vocabulary_answers" ("answer_id" SERIAL PRIMARY KEY NOT NULL, "answer" TEXT, "is_correct" BOOLEAN, "question_id" INTEGER);
-INSERT INTO vocabulary_answers VALUES(1,'蘋果',true,1);
-INSERT INTO vocabulary_answers VALUES(2,'香蕉',false,1);
-INSERT INTO vocabulary_answers VALUES(3,'西瓜',false,1);
-INSERT INTO vocabulary_answers VALUES(4,'橙',false,1);
-INSERT INTO vocabulary_answers VALUES(5,'橙',false,2);
-INSERT INTO vocabulary_answers VALUES(6,'西瓜',true,2);
-INSERT INTO vocabulary_answers VALUES(7,'蘋果',false,2);
-INSERT INTO vocabulary_answers VALUES(8,'香蕉',false,2);
+-- CREATE TABLE IF NOT EXISTS "vocabulary_answers" ("answer_id" SERIAL PRIMARY KEY NOT NULL, "answer" TEXT, "is_correct" BOOLEAN, "question_id" INTEGER);
+-- INSERT INTO vocabulary_answers VALUES(1,'蘋果',true,1);
+-- INSERT INTO vocabulary_answers VALUES(2,'香蕉',false,1);
+-- INSERT INTO vocabulary_answers VALUES(3,'西瓜',false,1);
+-- INSERT INTO vocabulary_answers VALUES(4,'橙',false,1);
+-- INSERT INTO vocabulary_answers VALUES(5,'橙',false,2);
+-- INSERT INTO vocabulary_answers VALUES(6,'西瓜',true,2);
+-- INSERT INTO vocabulary_answers VALUES(7,'蘋果',false,2);
+-- INSERT INTO vocabulary_answers VALUES(8,'香蕉',false,2);
+
+CREATE TABLE IF NOT EXISTS "flashcards" ("f_id" SERIAL PRIMARY KEY NOT NULL, "english" TEXT NOT NULL, "cantonese" TEXT NOT NULL, "image_url" TEXT NOT NULL);
+INSERT INTO flashcards VALUES(0,'apple','蘋果','https://usapple.org/wp-content/uploads/2019/10/apple-pink-lady.png');
+INSERT INTO flashcards VALUES(1,'watermelon','西瓜','https://www.kroger.com/product/images/xlarge/front/0000000003421');
+INSERT INTO flashcards VALUES(2,'banana','香蕉','https://www.thedailymeal.com/img/gallery/the-astonishingly-low-cost-of-a-single-whole-foods-banana/intro-1668962689.jpg');
+INSERT INTO flashcards VALUES(3,'strawberry','草莓','https://www.collinsdictionary.com/images/full/strawberry_227472010.jpg');
+INSERT INTO flashcards VALUES(4,'orange','橙','https://www.fervalle.com/wp-content/uploads/2022/07/transparent-orange-apple5eacfeae85ac29.7815306015883956945475.png');
 COMMIT;
