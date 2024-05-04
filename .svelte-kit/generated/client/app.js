@@ -19,7 +19,7 @@ export const dictionary = {
 		"/": [2],
 		"/createAccount": [3],
 		"/homepage": [4],
-		"/lesson1Animals": [5],
+		"/lesson1Animals": [~5],
 		"/login": [6],
 		"/matching": [~7],
 		"/sentence": [~8],

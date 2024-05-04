@@ -3,7 +3,7 @@
 	"/createAccount": [],
 	"/homepage": [],
 	"/lesson1Animals": [
-		"src/routes/lesson1Animals/+page.js"
+		"src/routes/lesson1Animals/+page.server.js"
 	],
 	"/login": [],
 	"/matching": [

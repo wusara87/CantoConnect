@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 	import Image from './Image.svelte'
 
     export let data;
@@ -36,6 +36,57 @@
                 </div>
                 <div class="card-back">
                     <span class="cantonese">{data.flashcards[card_index].cantonese}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="buttons">
+        <button class="prev button" on:click={goToPrev}>Previous</button>
+        <button class="next button" on:click={goToNext}>Next</button>
+    </div>
+</main> -->
+
+<script>
+    import Image from './Image.svelte'
+    export let data;
+
+    let card_index = 0;
+    let totalFlashcards = data ? data.flashcards.length : 0;
+
+    function goToPrev() {
+        if (card_index > 0) {
+            card_index--;
+        } else {
+            card_index = totalFlashcards - 1; //loop back to the last element
+        }
+    }
+
+    function goToNext() {
+        if (card_index < totalFlashcards - 1) {
+            card_index++;
+        } else {
+            card_index = 0;
+        }
+    }
+
+    $: totalFlashcards = data ? data.flashcards.length : 0; // Update totalFlashcards when data changes
+</script>
+
+<main class="container">
+    <a href="/homepage"><button class="button" id="homeBtn">Back To Home</button></a><br/>
+    <h1>Lesson 1: Fruits</h1>
+    <div class="content">
+        <div class="image">
+            <Image src={data && data.flashcards[card_index].image_url}/>
+        </div>
+        <div class="card-wrapper">
+            <div class="card-body">
+                <div class="card-front">
+                    <span class="english">{data && data.flashcards[card_index].english}</span>
+                </div>
+                <div class="card-back">
+                    <span class="cantonese">{data && data.flashcards[card_index].cantonese}</span>
                 </div>
             </div>
         </div>
