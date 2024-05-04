@@ -7,7 +7,7 @@
 <main class="container">
     <a href="/login"><button class="button" id="homeBtn">Logout</button></a><br/>
     <h1>CantoConnect</h1>
-    <img src="src/routes/logo.jpg" alt="cute logo"><br/>
+    <!-- <img src="src/routes/logo.jpg" alt="cute logo"><br/> -->
     <a href="/lesson1Animals"><button class="button">Lesson 1: Fruits</button></a><br/>
     <a href="/vocabulary"><button class="button">Vocabulary Mini-Game</button></a><br/>
     <a href="/matching"><button class="button">Matching Mini-Game</button></a>
@@ -32,10 +32,10 @@
         left: 50%;
         transform: translate(-50%, -50%);
     }
-    img {
+    /* img {
         width: 200px;
         height: auto;
-    }
+    } */
     .button {
         margin: 20px;
         font-family: "Open Sans", sans-serif;

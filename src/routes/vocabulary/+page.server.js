@@ -78,7 +78,7 @@ export async function load() {
     const questionRows = questionResult.rows;
 
     // Execute a query to select answers from the vocabulary_answers table
-    const answerResult = await client.query('SELECT answer_id, answer, isCorrect, question_id FROM vocabulary_answers');
+    const answerResult = await client.query('SELECT answer_id, answer, is_correct, question_id FROM vocabulary_answers');
     const answerRows = answerResult.rows;
 
     let reformattedQuestions = [];
