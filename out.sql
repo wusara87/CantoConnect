@@ -3,7 +3,7 @@ BEGIN TRANSACTION;
 CREATE TABLE IF NOT EXISTS "vocabulary_questions" ("question_id" SERIAL PRIMARY KEY NOT NULL, "question" TEXT NOT NULL);
 INSERT INTO vocabulary_questions VALUES(1,'Which word means ''apple'' in Cantonese?');
 INSERT INTO vocabulary_questions VALUES(2,'Which word means ''watermelon'' in Cantonese?');
-CREATE TABLE IF NOT EXISTS "vocabulary_answers" ("answer_id" SERIAL PRIMARY KEY NOT NULL, "answer" TEXT, "isCorrect" BOOLEAN, "question_id" INTEGER);
+CREATE TABLE IF NOT EXISTS "vocabulary_answers" ("answer_id" SERIAL PRIMARY KEY NOT NULL, "answer" TEXT, "is_correct" BOOLEAN, "question_id" INTEGER);
 INSERT INTO vocabulary_answers VALUES(1,'蘋果',true,1);
 INSERT INTO vocabulary_answers VALUES(2,'香蕉',false,1);
 INSERT INTO vocabulary_answers VALUES(3,'西瓜',false,1);
