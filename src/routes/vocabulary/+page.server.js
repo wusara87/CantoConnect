@@ -93,7 +93,7 @@ export async function load() {
       for (let answerRow of answerRows) {
         if (answerRow.question_id === questionRow.question_id) {
           question.options.push(answerRow.answer);
-          if (answerRow.is_correct === true) {
+          if (answerRow.is_correct) {
             question.correctAnswer.push(answerRow.answer);
           }
         }
